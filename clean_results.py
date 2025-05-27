@@ -13,7 +13,7 @@ def unnest(data):
     for item in data:
         for lap_details in item["lap_details"]:
             new_item = {
-                "place": int(item["place"].rstrip('.')),
+                "place": int(item["place"].rstrip(".")),
                 "bib": item["bib"],
                 "class": item["class"],
                 "name": item["name"],
@@ -28,7 +28,7 @@ def unnest(data):
                 "lap_time": lap_details["lap_time"],
                 "lap_time_secs": time_to_secs(lap_details["lap_time"]),
                 "total": lap_details["total"],
-                "total_secs": time_to_secs(lap_details["total"])
+                "total_secs": time_to_secs(lap_details["total"]),
             }
             unnested.append(new_item)
     return unnested

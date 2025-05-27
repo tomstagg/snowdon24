@@ -1,4 +1,49 @@
-[ruff]
+[project]
+name = "snowdon24"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4>=4.13.4",
+    "duckdb>=1.2.2",
+    "duckdb-engine>=0.17.0",
+    "ipykernel>=6.29.5",
+    "ipython>=9.2.0",
+    "jupysql>=0.11.1",
+    "jupyterlab>=4.4.2",
+    "matplotlib>=3.10.3",
+    "numpy>=2.2.6",
+    "pandas>=2.2.3",
+    "pre-commit>=4.2.0",
+    "pyarrow>=20.0.0",
+    "requests>=2.32.3",
+    "ruff>=0.11.10",
+    "selenium>=4.32.0",
+    "toml>=0.10.2",
+    "webdriver-manager>=4.0.2",
+]
+
+
+[tool.ruff]
 line-length = 100
-select = ["E", "F", "W", "C90"]
-# ignore = ["E501"]
+lint.select = [
+    "E",    # Pycodestyle errors (style guide for Python)
+    "F",    # Pyflakes errors (syntax and undefined variables)
+    "W",    # Pycodestyle warnings (less critical style issues)
+    "C90",  # Additional Ruff-specific rules (like complexity)
+    "I",    # Import formatting (to enforce sorted imports)
+    "N",    # Naming conventions (helps maintain consistency)
+    "D",    # Docstring conventions (useful for public APIs)
+    "PLR",  # Pylint rules (common Python best practices)
+]
+
+# Optionally ignore specific rules
+lint.ignore = [
+    "E501",  # Line length (already controlled by line-length)
+    "D100",  # Missing docstring in public module (if not needed)
+    "D104",  # Missing docstring in public package
+    "N802",  # Function name should be lowercase (for flexibility)
+    "D103", 
+    "N812"
+]
